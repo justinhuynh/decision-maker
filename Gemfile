@@ -12,9 +12,6 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'pry-rails'
 gem 'faker'
-gem 'kaminari'
-gem 'fog'
-gem 'fog-aws'
 gem 'dotenv-rails'
 
 
@@ -29,9 +26,6 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'poltergeist'
-  gem 'database_cleaner'
-  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :production do
