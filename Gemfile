@@ -14,17 +14,17 @@ gem 'pry-rails'
 gem 'faker'
 gem 'dotenv-rails'
 
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'
-  gem 'shoulda-matchers', require: false
 end
 
 group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
   gem 'coveralls', require: false
 end
 
