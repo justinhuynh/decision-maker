@@ -12,11 +12,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'pry-rails'
 gem 'faker'
-gem 'kaminari'
-gem 'fog'
-gem 'fog-aws'
 gem 'dotenv-rails'
-
 
 group :development, :test do
   gem 'rspec-rails'
@@ -24,14 +20,12 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'
-  gem 'shoulda-matchers', require: false
 end
 
 group :test do
-  gem 'coveralls', require: false
-  gem 'poltergeist'
+  gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
-  gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'coveralls', require: false
 end
 
 group :production do
