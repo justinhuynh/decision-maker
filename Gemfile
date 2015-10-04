@@ -13,6 +13,7 @@ gem 'foundation-rails'
 gem 'pry-rails'
 gem 'faker'
 gem 'dotenv-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'

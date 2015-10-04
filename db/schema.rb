@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003171651) do
+ActiveRecord::Schema.define(version: 20151004205258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choices", force: :cascade do |t|
+    t.string "title"
+    t.string "description", null: false
+  end
+
+  add_index "choices", ["description"], name: "index_choices_on_description", unique: true, using: :btree
+
+  create_table "instance_choices", force: :cascade do |t|
+    t.integer  "instance_id",                 null: false
+    t.integer  "choice_id",                   null: false
+    t.boolean  "selected",    default: false, null: false
+    t.boolean  "recommended", default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "instance_choices", ["instance_id", "choice_id"], name: "index_instance_choices_on_instance_id_and_choice_id", unique: true, using: :btree
+  add_index "instance_choices", ["instance_id", "recommended"], name: "index_instance_choices_on_instance_id_and_recommended", unique: true, using: :btree
+  add_index "instance_choices", ["instance_id", "selected"], name: "index_instance_choices_on_instance_id_and_selected", unique: true, using: :btree
+
+  create_table "instances", force: :cascade do |t|
+    t.integer  "outcome_rating"
+    t.integer  "user_id",        null: false
+    t.integer  "question_id",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string   "title"

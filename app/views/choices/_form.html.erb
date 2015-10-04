@@ -1,0 +1,7 @@
+<%= simple_form_for @choice do |f| %>
+  <%= f.input :description, label: "Answer Choice 1" %>
+  <%= f.input :description, label: "Answer Choice 2" %>
+  <%= f.input :description, label: "Answer Choice 3" %>
+  <%= f.input :description, label: "Answer Choice 4" %>
+  <%= f.button :submit, label_html: { class: "button expand" } %>
+<% end %>

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       flash[:success] = "Question successfully added"
-      redirect_to questions_path
+      redirect_to @question
     else
       flash[:warning] = @question.errors.full_messages.join(", ")
       render :new
@@ -16,6 +16,11 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+  end
+
+  def show
+    @question = Question.find(params[:id])
+    @choice = Choice.new
   end
 
   protected

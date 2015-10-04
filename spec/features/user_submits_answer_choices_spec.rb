@@ -17,7 +17,7 @@ feature "user submits answer choices for a question", %{
         my question
 } do
   context "User submits question and" do
-    let!(:question) = FactoryGirl.build_stubbed(:question)
+    let!(:question) { FactoryGirl.create(:question) }
 
     scenario "successfully submits 3 different answer choices" do
       visit question_path(question)
@@ -37,7 +37,7 @@ feature "user submits answer choices for a question", %{
     scenario "submits answer choice that is too long" do
       visit question_path(question)
       choices = ["Chinese food", "Italian food", "Vietnamese food"]
-      super_long_choice = choice[0] * 30
+      super_long_choice = choices[0] * 30
 
       fill_in "Answer Choice 1", with: super_long_choice
       fill_in "Answer Choice 2", with: choices[1]
