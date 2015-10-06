@@ -1,0 +1,6 @@
+<h2><%= @question.body %></h2>
+<ul>
+  <% @choices.each do |choice| %>
+    <li><%= choice.description %></li>
+  <% end %>
+</ul>
