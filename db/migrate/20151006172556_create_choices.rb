@@ -5,6 +5,6 @@ class CreateChoices < ActiveRecord::Migration
       t.string :description, null: false
       t.belongs_to :question, null: false
     end
-      add_index :choices, :description, unique: true
+    add_index :choices, :description, unique: true
   end
 end

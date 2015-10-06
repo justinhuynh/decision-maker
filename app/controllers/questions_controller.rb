@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
-      flash[:notice] = 'Question updated.'
+      flash[:notice] = "Question updated."
       redirect_to @question
     else
       flash[:error] = @question.errors.full_messages
