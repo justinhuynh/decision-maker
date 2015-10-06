@@ -12,9 +12,5 @@ describe Choice do
         with_message("Answer choice must be less than 140 characters")
     end
     it { should belong_to(:question) }
-    subject { FactoryGirl.build(:choice) }
-    it do
-      should validate_uniqueness_of(:description)
-    end
   end
 end
