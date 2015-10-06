@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Question do
   describe "validations" do
@@ -11,5 +11,6 @@ describe Question do
         is_at_most(140).
         with_message("Question must be less than 140 characters")
     end
+    it { should have_many(:choices) }
   end
 end
