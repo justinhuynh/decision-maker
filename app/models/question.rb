@@ -6,5 +6,5 @@ class Question < ActiveRecord::Base
     message: "Question must be less than 140 characters"
   }
   accepts_nested_attributes_for :choices,
-                                reject_if: proc { |attributes| attributes['description'].blank? }
+    reject_if: proc { |attributes| attributes['description'].blank? }
 end

@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
-    @question.choices.build
+    @choices = @question.choices
   end
 
   def update
@@ -48,7 +48,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(
       :title,
       :body,
-      choices_attributes: [:description]
+      choices_attributes: [:id, :description]
       )
   end
 end

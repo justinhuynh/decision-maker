@@ -6,5 +6,4 @@ class Choice < ActiveRecord::Base
     maximum: 140,
     message: "Answer choice must be less than 140 characters"
   }
-  validates :description, uniqueness: true
 end
