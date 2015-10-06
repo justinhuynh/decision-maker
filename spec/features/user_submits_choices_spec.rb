@@ -52,8 +52,10 @@ feature "user submits answer choices for a question", %{
       fill_in answer_fields[2], with: choices[2]
       click_button "Create Question"
 
-      expect(page).to have_content("Answer choice must be less than 140 characters")
-      expect(page).to_not have_content("Answer choices successfully added")
+      expect(page).
+        to have_content("Answer choice must be less than 140 characters")
+      expect(page).
+        to_not have_content("Answer choices successfully added")
     end
   end
 end
