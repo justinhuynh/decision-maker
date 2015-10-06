@@ -2,4 +2,8 @@
 
 <h3>Please submit your answer choices below. Enter at least 2 and no more than 4 distinct answer choices for this question.</h3>
 
-<%= render 'choices/form' %>
+<ul>
+  <% @instances.each do |instance| %>
+    <li><%= instance.question.body %>  <%= instance.created_at %></li>
+  <% end %>
+</ul>

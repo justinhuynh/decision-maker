@@ -22,6 +22,7 @@ feature "user submits answer choices for a question", %{
     scenario "successfully submits 3 different answer choices" do
       visit question_path(question)
       choices = ["Chinese food", "Italian food", "Vietnamese food"]
+      save_and_open_page
 
       fill_in "Answer Choice 1", with: choices[0]
       fill_in "Answer Choice 2", with: choices[1]

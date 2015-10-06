@@ -9,4 +9,5 @@ class Question < ActiveRecord::Base
     maximum: 140,
     message: "Question must be less than 140 characters"
   }
+  accepts_nested_attributes_for :instances
 end

@@ -4,7 +4,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = Question.find_or_create_by(question_params)
+    if current_user
+      @instance = Instance.create(user: current_user, question: @question)
+    end
     if @question.save
       flash[:success] = "Question successfully added"
       redirect_to @question
@@ -20,7 +23,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @choice = Choice.new
+    @instances = @question.instances
   end
 
   protected
