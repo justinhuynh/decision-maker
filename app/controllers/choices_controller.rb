@@ -4,7 +4,6 @@ class ChoicesController < ApplicationController
   end
 
   def create
-    binding.pry
     @choice = Choice.new(choice_params)
     if @choice.save
       flash[:notice] = 'Answer choice successfully added'

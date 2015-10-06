@@ -14,6 +14,7 @@ gem 'pry-rails'
 gem 'faker'
 gem 'dotenv-rails'
 gem 'simple_form'
+gem 'cocoon'
 
 group :development, :test do
   gem 'rspec-rails'

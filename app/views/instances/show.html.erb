@@ -1,0 +1,16 @@
+<h2><%= @instance.question.body %></h2>
+
+<%= @instance.created_at %>
+
+<%= form_for @instance do |f| %>
+  <% f.fields_for :instance_choices do |builder| %>
+    <%= builder.label :choice_id %>
+    <%= builder.number_field :choice_id %>
+
+    <!-- <% builder.fields_for :choice do |choice| %>
+      <%= choice.label :description %>
+      <%= choice.text_field :description %> -->
+    <%= f.submit %>
+    <!-- <% end %> -->
+  <% end %>
+<% end %>

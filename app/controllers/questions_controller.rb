@@ -5,12 +5,10 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.find_or_create_by(question_params)
-    if current_user
-      @instance = Instance.create(user: current_user, question: @question)
-    end
+    @instance = Instance.create(instance_attributes)
     if @question.save
       flash[:success] = "Question successfully added"
-      redirect_to @question
+      redirect_to @instance
     else
       flash[:warning] = @question.errors.full_messages.join(", ")
       render :new
@@ -27,6 +25,14 @@ class QuestionsController < ApplicationController
   end
 
   protected
+
+  def instance_attributes
+    if current_user
+      return { user: current_user, question: @question }
+    else
+      { question: @question }
+    end
+  end
 
   def question_params
     params.require(:question).permit(:title, :body)
