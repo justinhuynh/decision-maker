@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   has_many :choices
+  has_many :responses
   validates :body, presence: { message: "Question can't be blank" }
   validates :body, length: {
     maximum: 140,

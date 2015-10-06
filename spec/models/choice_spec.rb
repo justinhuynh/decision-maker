@@ -12,5 +12,6 @@ describe Choice do
         with_message("Answer choice must be less than 140 characters")
     end
     it { should belong_to(:question) }
+    it { should have_many(:responses) }
   end
 end

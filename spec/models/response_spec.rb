@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe QuestionResponse do
+describe Response do
   describe "validations" do
     it { should validate_presence_of(:question) }
     it { should validate_presence_of(:choice) }

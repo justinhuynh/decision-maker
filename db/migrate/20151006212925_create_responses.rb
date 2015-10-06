@@ -1,6 +1,6 @@
-class CreateQuestionResponses < ActiveRecord::Migration
+class CreateResponses < ActiveRecord::Migration
   def change
-    create_table :question_responses do |t|
+    create_table :responses do |t|
       t.belongs_to :question, null: false
       t.belongs_to :choice, null: false
       t.belongs_to :user
