@@ -3,5 +3,5 @@
   <%= f.number_field :rating %>
   <%= f.label :choice_id %>
   <%= f.collection_select :choice_id, @question.choices, :id, :description %>
-  <%= f.submit %>
+  <%= f.submit class: "button expand" %>
 <% end %>

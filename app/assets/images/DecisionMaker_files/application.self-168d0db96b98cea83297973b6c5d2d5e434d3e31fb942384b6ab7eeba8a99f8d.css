@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+ */
+
+
+.center-container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
+
+body {
+  background-image: url("background-photo-water.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.top-bar { background-color: transparent; }
+.top-bar-section { background-color: transparent !important;  }
+.top-bar-section li { background-color: transparent !important;  }
+.top-bar-section li a { background-color: transparent !important;  }
+
+.master-overlay {
+  background-color: rgba(250,250,250,.2);
+  padding: 4vw 2vw;
+}
+
+.panel:hover {
+  box-shadow: 5px 5px 5px rgb(255,0,0);
+  background-color: rgba(250,250,250,.9);
+}

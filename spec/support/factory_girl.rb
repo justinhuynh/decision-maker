@@ -22,5 +22,12 @@ FactoryGirl.define do
         FactoryGirl.create(:choice, question: question)
       end
     end
+
+  end
+
+  factory :response do
+    choice
+    question
+    rating 3
   end
 end

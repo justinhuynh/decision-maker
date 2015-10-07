@@ -128,7 +128,7 @@ $white       : #FFFFFF;
 
 // We use these to control various global styles
 // $body-bg: $sky-blue;
-// $body-font-color: $jet;
+$body-font-color: $white;// $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -216,7 +216,7 @@ $white       : #FFFFFF;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
+$header-font-color: $white;//$jet;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -644,7 +644,7 @@ $white       : #FFFFFF;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color($black, $lightness: 30%);
+$form-label-font-color: scale-color($white, $lightness: 30%) ;// scale-color($black, $lightness: 30%);
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;

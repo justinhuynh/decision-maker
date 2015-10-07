@@ -1,0 +1,9 @@
+.card {
+  @extend .panel;
+
+  background-color: red;
+
+  &:hover {
+
+  }
+}
