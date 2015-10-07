@@ -1,7 +1,28 @@
 <h2><%= @question.body %></h2>
+<%= link_to "Edit Question", edit_question_path(@question) %>
+
 <ul>
   <% @choices.each do |choice| %>
     <li><%= choice.description %></li>
   <% end %>
 </ul>
-<%= link_to "Edit Question", edit_question_path(@question) %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Created At</th>
+    <th>Choice Selected</th>
+    <th>Rating</th>
+  </tr>
+  <% @responses.each do |response| %>
+    <tr>
+      <td><%= response.user %></td>
+      <td><%= response.created_at %></td>
+      <td><%= response.choice.description %></td>
+      <td><%= response.rating %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Add a response below!</h3>
+<%= render 'responses/form' %>

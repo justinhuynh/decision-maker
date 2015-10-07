@@ -12,5 +12,6 @@ describe Question do
         with_message("Question must be less than 140 characters")
     end
     it { should have_many(:choices) }
+    it { should have_many(:responses) }
   end
 end
