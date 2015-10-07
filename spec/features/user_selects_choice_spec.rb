@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user submits a question", %{
+feature "user selects choice as response", %{
   As an indecisive user
   I want to submit and rate the choice I ultimately selected (user choice)
   So that I can track the results of my choices
