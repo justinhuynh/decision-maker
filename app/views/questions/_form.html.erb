@@ -1,13 +1,9 @@
-<div class="row">
-  <div class="small-8 small-centered columns">
-    <%= form_for(@question) do |f| %>
-      <%= f.label :body, "Question" %>
-      <%= f.text_field :body %>
-      <%= f.fields_for :choices do |choice| %>
-        <%= choice.label :description, "Answer Choice" %>
-        <%= choice.text_field :description %>
-      <% end %>
-      <%= f.submit class: "button expand" %>
-    <% end %>
-  </div>
-</div>
+<%= form_for(@question) do |f| %>
+  <%= f.label :body, "Question" %>
+  <%= f.text_field :body %>
+  <%= f.fields_for :choices do |choice| %>
+    <%= choice.label :description, "Answer Choice" %>
+    <%= choice.text_field :description %>
+  <% end %>
+  <%= f.submit class: "button expand" %>
+<% end %>

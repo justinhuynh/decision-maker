@@ -17,10 +17,13 @@
  */
 
 .center-container {
-  position:absolute;
+  position: absolute;
   top:50%;
   left:50%;
+  transform: translate(-50%, -50%);
 }
+
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
 
 /* body { background-image: url("background-photo.jpg");
   background-repeat: no-repeat;
@@ -52,6 +55,11 @@ body {
    */
 }
 
+.top-bar { background-color: transparent; }
+.top-bar-section { background-color: transparent !important;  }
+.top-bar-section li { background-color: transparent !important;  }
+.top-bar-section li a { background-color: transparent !important;  }
+
 /* For mobile devices */
 @media only screen and (max-width: 767px) {
   body {
@@ -60,3 +68,12 @@ body {
     background-image: url("background-photo-mobile-devices.jpg");
   }
 	}
+
+  /* Mixin */
+  @mixin vertical-align($position: absolute) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }

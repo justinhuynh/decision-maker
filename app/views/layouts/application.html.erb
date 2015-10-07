@@ -6,9 +6,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="center-container">
-  <h1>jello</h1>
-  </div>
+
   <div class="contain-to-grid">
     <%= render 'layouts/top_bar' %>
   </div>
@@ -17,12 +15,14 @@
       <%= render 'layouts/flash' %>
     </div>
   </div>
-  <div class="row">
-    <div class="small-12 columns">
+
+  <div class="row center-container">
+    <div class="small-10 large-8 small-centered columns">
       <%= yield %>
-    </div>
+
   </div>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
+  </div>
 </body>
 </html>
