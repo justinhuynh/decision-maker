@@ -5,10 +5,10 @@ class ResponsesController < ApplicationController
     @response.question = @question
     @response.user = current_user if current_user
     if @response.save
-      flash[:notice] = 'Response successfully added'
+      flash[:notice] = "Response successfully added"
       redirect_to @question
     else
-      flash[:error] = @response.errors.full_messages.join(' ')
+      flash[:error] = @response.errors.full_messages.join(" ")
       redirect_to @question
     end
   end
