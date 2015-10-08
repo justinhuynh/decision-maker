@@ -10,7 +10,7 @@ $(".choice-panel").on("click", function(event) {
 $(".submit-response").on("click", function(event) {
   event.preventDefault();
   var questionId = $(this).data("questionId");
-  var rating = $('input#response_rating').val();
+  var rating = $("input#response_rating").val();
   var request = $.ajax({
     method: "POST",
     url: ("/questions/" + questionId + "/responses"),
