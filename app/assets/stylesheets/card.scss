@@ -1,9 +1,18 @@
+$card-box-shadow: 3px 5px 8px rgba(0,0,0,.4);
+$card-bg-color: $sky-blue;
+
 .card {
   @extend .panel;
 
-  background-color: red;
+  border-width: 0;
+  background-color: scale-color($card-bg-color, $lightness: 40%);
+  box-shadow: $card-box-shadow;
 
   &:hover {
-
+    background-color: scale-color($card-bg-color, $lightness: 80%)
   }
+}
+
+.selected {
+  background-color: $card-bg-color;
 }

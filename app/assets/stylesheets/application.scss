@@ -1,13 +1,5 @@
 @import "foundation_and_overrides";
 @import "card.scss";
-
-.center-container {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
-
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
 
 body {
@@ -23,17 +15,18 @@ body {
 .top-bar-section li { background-color: transparent !important;  }
 .top-bar-section li a { background-color: transparent !important;  }
 
+.center-container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
 .master-overlay {
   background-color: rgba(250,250,250,.2);
-  padding: 4vw 2vw;
-  // min-height: calc(100%)
+  padding: 2vw;
 }
 
-.panel:hover {
-  box-shadow: 5px 5px 5px rgb(255,0,0);
-  background-color: lime;
-}
-
-.selected-choice, .selected-choice:hover {
-  background-color: rgba(0,250,100,.9);
+.submit-response {
+  margin: 0px;
 }

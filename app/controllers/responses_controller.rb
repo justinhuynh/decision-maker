@@ -4,13 +4,9 @@ class ResponsesController < ApplicationController
     @response = Response.new(response_params)
     @response.question = @question
     @response.user = current_user if current_user
-    if @response.save
-      flash[:notice] = "Response successfully added"
-      redirect_to @question
-    else
-      flash[:error] = @response.errors.full_messages.join(" ")
-      redirect_to @question
-    end
+    render json: {
+      message: "Response successfully added"
+    }
   end
 
   protected
