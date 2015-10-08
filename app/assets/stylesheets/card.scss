@@ -4,12 +4,12 @@ $card-bg-color: $sky-blue;
 .card {
   @extend .panel;
 
-  border-width: 0;
   background-color: scale-color($card-bg-color, $lightness: 40%);
+  border-width: 0;
   box-shadow: $card-box-shadow;
 
   &:hover {
-    background-color: scale-color($card-bg-color, $lightness: 80%)
+    background-color: scale-color($card-bg-color, $lightness: 80%);
   }
 }
 
