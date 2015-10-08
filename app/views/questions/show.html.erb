@@ -1,28 +1,21 @@
-<h2><%= @question.body %></h2>
-<%= link_to "Edit Question", edit_question_path(@question) %>
+<div class="panel">
+  <h2><%= @question.body %></h2>
+</div>
 
-<ul>
-  <% @choices.each do |choice| %>
-    <li><%= choice.description %></li>
+<h3>What did you decide?</h3>
+<div class="row">
+  <% @choices.each_with_index do |choice, index| %>
+    <div class="columns medium-4 small-12 end">
+      <a href="#">
+        <div class="card text-center choice-panel" id="<%=choice.id%>">
+          <%= choice.description %>
+        </div>
+      </a>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Created At</th>
-    <th>Choice Selected</th>
-    <th>Rating</th>
-  </tr>
-  <% @responses.each do |response| %>
-    <tr>
-      <td><%= response.user %></td>
-      <td><%= response.created_at %></td>
-      <td><%= response.choice.description %></td>
-      <td><%= response.rating %></td>
-    </tr>
-  <% end %>
-</table>
+<h3>What was the outcome?</h3>
+<%= render 'responses/slider' %>
 
-<h3>Add a response below!</h3>
-<%= render 'responses/form' %>
+<%= link_to("Create Response", "#", class: "button expand submit-response", data: { question_id: @question.id }) %>

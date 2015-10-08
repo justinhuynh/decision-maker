@@ -1,7 +1,0 @@
-<%= form_for [@question, @response] do |f| %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.label :choice_id %>
-  <%= f.collection_select :choice_id, @question.choices, :id, :description %>
-  <%= f.submit %>
-<% end %>

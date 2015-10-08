@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.2'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -24,8 +24,10 @@ end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'coveralls', require: false
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :production do

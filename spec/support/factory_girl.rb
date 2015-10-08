@@ -23,4 +23,10 @@ FactoryGirl.define do
       end
     end
   end
+
+  factory :response do
+    choice
+    question
+    rating 3
+  end
 end
