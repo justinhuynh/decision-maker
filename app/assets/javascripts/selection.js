@@ -8,7 +8,7 @@ $(".choice-panel").on("click", function(event) {
   } else {
     $(".choice-panel").removeClass("selected");
     $(this).addClass("selected");
-  };
+  }
   selectedChoiceId = $(this).attr("id");
 });
 
