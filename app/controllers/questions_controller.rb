@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
     @choices = @question.choices
     @responses = @question.responses
     @response = Response.new
+    @recommendation = @question.recommendation
   end
 
   def edit

@@ -9,4 +9,10 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :choices,
     reject_if: proc { |attributes| attributes["description"].blank?
   }
+
+  private
+
+  def set_recommendation
+    # @recommendation = Recommender.new(self).recommendation
+  end
 end

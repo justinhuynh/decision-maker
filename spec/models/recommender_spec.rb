@@ -23,7 +23,7 @@ describe Recommender do
   end
 
   it "returns a recommended choice for a given question" do
-    expect(recommendation.selected_choice).to be_a(Choice)
-    expect(recommendation.selected_choice.question).to eq(question)
+    expect(recommendation.recommendation).to be_a(Choice)
+    expect(recommendation.recommendation.question).to eq(question)
   end
 end

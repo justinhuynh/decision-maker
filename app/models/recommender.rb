@@ -8,7 +8,7 @@ class Recommender
     @user = user
   end
 
-  def selected_choice
+  def recommendation
     @choices.sample
   end
 end

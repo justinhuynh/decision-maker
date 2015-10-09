@@ -3,6 +3,10 @@
   <%= link_to "View Responses For This Question", question_responses_path(@question) %>
 </div>
 
+<div class="panel">
+  <h2>Your recommended choice is <%= @recommendation.description %></h2>
+</div>
+
 <h3>What did you decide?</h3>
 <div class="row">
   <% @choices.each_with_index do |choice, index| %>
