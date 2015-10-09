@@ -1,9 +1,14 @@
 var selectedChoiceId;
+var count = 0;
 
 $(".choice-panel").on("click", function(event) {
   event.preventDefault();
-  $(".choice-panel").removeClass("selected");
-  $(this).toggleClass("selected");
+  if ($(this).hasClass("selected")) {
+    $(this).removeClass("selected");
+  } else {
+    $(".choice-panel").removeClass("selected");
+    $(this).addClass("selected");
+  };
   selectedChoiceId = $(this).attr("id");
 });
 
@@ -23,11 +28,13 @@ $(".submit-response").on("click", function(event) {
     dataType: "json"
   });
   request.success(function(data) {
+    count++;
     var flashMessage = $("<div>", {
       class: "small-12 small-centered columns flash flash-success",
-      text: data.message
+      text: data.message + " (" + count + ")\nSelection: " + data.choice + ", Rating: " + data.rating
     });
     var flashContainer = $(".flash-container");
+    flashContainer.empty();
     flashMessage.appendTo(flashContainer);
   });
 });

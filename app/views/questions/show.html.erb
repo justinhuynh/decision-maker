@@ -1,5 +1,6 @@
 <div class="panel">
   <h2><%= @question.body %></h2>
+  <%= link_to "View Responses For This Question", question_responses_path(@question) %>
 </div>
 
 <h3>What did you decide?</h3>
