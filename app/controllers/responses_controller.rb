@@ -4,9 +4,22 @@ class ResponsesController < ApplicationController
     @response = Response.new(response_params)
     @response.question = @question
     @response.user = current_user if current_user
-    render json: {
-      message: "Response successfully added"
-    }
+    if @response.save
+      render json: {
+        message: "Response successfully added",
+        choice: @response.choice.description,
+        rating: @response.rating
+      }
+    else
+      render json: {
+        message: @response.errors.full_messages.join(", ")
+      }
+    end
+  end
+
+  def index
+    @question = Question.find(params[:question_id])
+    @responses = @question.responses
   end
 
   protected

@@ -47,15 +47,3 @@ feature "user submits a question", %{
     end
   end
 end
-
-def fill_in_answers
-  answer_fields = [
-    "question_choices_attributes_0_description",
-    "question_choices_attributes_1_description",
-    "question_choices_attributes_2_description"
-  ]
-
-  fill_in answer_fields[0], with: "Valid Option 1"
-  fill_in answer_fields[1], with: "Valid Option 2"
-  fill_in answer_fields[2], with: "Valid Option 3"
-end
