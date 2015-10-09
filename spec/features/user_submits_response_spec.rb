@@ -12,7 +12,7 @@ feature "user submits a response", %{
         that my selection was recorded
 } do
   context "User visits question and", js: true do
-    let!(:question) { FactoryGirl.create(:question_with_choices) }
+    let!(:question) { FactoryGirl.create(:question, :with_choices) }
 
     scenario "successfully submits selected choice" do
       visit question_path(question)

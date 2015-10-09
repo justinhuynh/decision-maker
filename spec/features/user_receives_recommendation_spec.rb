@@ -6,13 +6,17 @@ feature "user receives a recommendation from app", %{
   So that I can take action on my decision
 
   Acceptance Criteria:
-  - [ ] The application recommend a choice
+  - [ ] The application recommends a choice from the options I
+        submitted for this question
   - [ ] I will see this after submitting the question
 } do
   context "User submits question with choices", js: true do
-    let!(:question) { FactoryGirl.create(:question_with_choices) }
+    let!(:question) { FactoryGirl.create(:question, :with_responses) }
 
     scenario "and is able to see a recommended choice" do
+      visit question_path(question)
+
+      expect(page).to have_content("Your recommended choice is")
     end
   end
 end
