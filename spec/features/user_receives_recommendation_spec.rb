@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "user receives a recommendation from app", %{
   As an indecisive user
-  I want to receive a response to my question
+  I want to receive a query to my question
   So that I can take action on my decision
 
   Acceptance Criteria:
@@ -11,7 +11,7 @@ feature "user receives a recommendation from app", %{
   - [ ] I will see this after submitting the question
 } do
   context "User submits question with choices", js: true do
-    let!(:question) { FactoryGirl.create(:question, :with_responses) }
+    let!(:question) { FactoryGirl.create(:question, :with_queries) }
     let!(:recommendation) { question.recommendation }
 
     scenario "and is able to see a recommended choice" do

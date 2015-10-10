@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   has_many :choices
-  has_many :responses
+  has_many :queries
   validates :body, presence: { message: "Question can't be blank" }
   validates :body, length: {
     maximum: 140,
@@ -9,10 +9,4 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :choices,
     reject_if: proc { |attributes| attributes["description"].blank?
   }
-
-  private
-
-  def set_recommendation
-    # @recommendation = Recommender.new(self).recommendation
-  end
 end

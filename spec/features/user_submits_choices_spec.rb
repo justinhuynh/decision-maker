@@ -3,7 +3,7 @@ require "rails_helper"
 feature "user submits answer choices for a question", %{
   As an indecisive user
   I want to submit potential answer choices for my question
-  So that I can receive a relevant response
+  So that I can receive a relevant query
 
   Acceptance Criteria:
   - [X] When submitting a question, I will see a form to enter answer choices

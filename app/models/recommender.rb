@@ -1,10 +1,10 @@
 class Recommender
-  attr_reader :question, :user, :choices, :responses
+  attr_reader :question, :user, :choices, :queries
 
   def initialize(question, user=nil)
     @question = question
     @choices = question.choices
-    @responses = question.responses
+    @queries = question.queries
     @user = user
   end
 

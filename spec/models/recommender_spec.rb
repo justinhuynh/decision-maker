@@ -5,11 +5,12 @@ describe Recommender do
     FactoryGirl.create(:question, body: "What should I have for dinner?")
   end
   let!(:choices) { FactoryGirl.create_list(:choice, 3, question: question) }
-  let!(:responses) do
+  let!(:queries) do
     FactoryGirl.create_list(
-      :response,
+      :query,
       10,
-      choice: choices.sample,
+      selected_choice: choices.sample,
+      recommended_choice: choices.sample,
       question: question
       )
   end
@@ -19,7 +20,7 @@ describe Recommender do
     expect(recommendation.question).to be_a(Question)
     expect(recommendation.question.body).to eq("What should I have for dinner?")
     expect(recommendation.choices.count).to eq(3)
-    expect(recommendation.responses.count).to eq(10)
+    expect(recommendation.queries.count).to eq(10)
   end
 
   it "returns a recommended choice for a given question" do

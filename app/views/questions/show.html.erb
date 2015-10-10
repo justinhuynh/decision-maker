@@ -1,6 +1,6 @@
 <div class="panel">
   <h2><%= @question.body %></h2>
-  <%= link_to "View Responses For This Question", question_responses_path(@question) %>
+  <%= link_to "View queries For This Question", question_queries_path(@question) %>
 </div>
 
 <div class="panel">
@@ -21,6 +21,6 @@
 </div>
 
 <h3>What was the outcome?</h3>
-<%= render 'responses/slider' %>
+<%= render 'queries/slider' %>
 
-<%= link_to("Create Response", "#", class: "button expand submit-response", data: { question_id: @question.id }) %>
+<%= link_to("Create query", "#", class: "button expand submit-query", data: { question_id: @question.id }) %>
