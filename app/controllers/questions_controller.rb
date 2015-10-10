@@ -24,10 +24,6 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @choices = @question.choices
-    # need to update this
-    @queries = @question.queries
-    @query = Query.new
-    @recommendation = =
   end
 
   def edit

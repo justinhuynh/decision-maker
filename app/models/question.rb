@@ -9,4 +9,16 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :choices,
     reject_if: proc { |attributes| attributes["description"].blank?
   }
+
+  def query
+    self.queries.first
+  end
+
+  def recommendation
+    query.recommended_choice
+  end
+
+  def selection
+    query.selected_choice
+  end
 end

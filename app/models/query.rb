@@ -7,7 +7,6 @@ class Query < ActiveRecord::Base
   belongs_to :recommended_choice, class_name: "Choice"
 
   validates :question, presence: true
-  validates :rating, presence: true
   validates :rating, numericality: { only_integer: true }
   validates :rating, inclusion: { in: 0..10 }
 

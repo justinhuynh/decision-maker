@@ -11,7 +11,7 @@ feature "user receives a recommendation from app", %{
   - [ ] I will see this after submitting the question
 } do
   context "User submits question with choices", js: true do
-    let!(:question) { FactoryGirl.create(:question, :with_queries) }
+    let!(:question) { FactoryGirl.create(:question, :with_query) }
     let!(:recommendation) { question.recommendation }
 
     scenario "and is able to see a recommended choice" do

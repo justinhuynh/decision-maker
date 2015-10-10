@@ -15,6 +15,13 @@ FactoryGirl.define do
     factory :recommended_choice
   end
 
+  factory :query do
+    selected_choice
+    recommended_choice
+    question
+    rating { rand(0..10) }
+  end
+
   factory :question do
     sequence(:body) { |n| "#{n} What should I have for lunch?" }
 
@@ -24,18 +31,15 @@ FactoryGirl.define do
       end
     end
 
-    trait :with_queries do
+    trait :with_query do
       with_choices
       after(:create) do |question|
-        create_list(:query, 10, selected_choice: question.choices.sample, recommended_choice: question.choices.sample)
+        create(:query,
+          question: question,
+          selected_choice: question.choices.sample,
+          recommended_choice: question.choices.sample
+          )
       end
     end
-  end
-
-  factory :query do
-    selected_choice
-    recommended_choice
-    question
-    rating { rand(0..10) }
   end
 end
