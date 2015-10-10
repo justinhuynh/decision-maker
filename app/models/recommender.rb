@@ -4,7 +4,6 @@ class Recommender
   def initialize(question, user=nil)
     @question = question
     @choices = question.choices
-    @queries = question.queries
     @user = user
   end
 

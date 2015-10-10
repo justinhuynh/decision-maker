@@ -30,16 +30,5 @@ FactoryGirl.define do
         create_list(:choice, 3, question: question)
       end
     end
-
-    trait :with_query do
-      with_choices
-      after(:create) do |question|
-        create(:query,
-          question: question,
-          selected_choice: question.choices.sample,
-          recommended_choice: question.choices.sample
-          )
-      end
-    end
   end
 end

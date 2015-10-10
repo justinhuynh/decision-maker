@@ -1,13 +1,12 @@
 class QueriesController < ApplicationController
-  def create
+  def update
     @question = Question.find(params[:question_id])
-    @query = query.new(query_params)
-    @query.question = @question
+    @query = @question.query
     @query.user = current_user if current_user
-    if @query.save
+    if @query.update(query_params)
       render json: {
-        message: "query successfully added",
-        choice: @query.choice.description,
+        message: "Response successfully added",
+        choice: @query.selected_choice.description,
         rating: @query.rating
       }
     else
@@ -25,6 +24,6 @@ class QueriesController < ApplicationController
   protected
 
   def query_params
-    params.require(:query).permit(:rating, :choice_id)
+    params.require(:query).permit(:rating, :selected_choice_id)
   end
 end

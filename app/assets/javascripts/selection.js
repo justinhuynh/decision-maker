@@ -15,15 +15,17 @@ $(".choice-panel").on("click", function(event) {
 $(".submit-query").on("click", function(event) {
   event.preventDefault();
   var questionId = $(this).data("questionId");
+  var queryId = $(this).data("queryId");
   var rating = $("input#query_rating").val();
   var request = $.ajax({
     method: "POST",
-    url: ("/questions/" + questionId + "/queries"),
+    url: ("/questions/" + questionId + "/queries/" + queryId),
     data: {
       query: {
-        choice_id: selectedChoiceId,
+        selected_choice_id: selectedChoiceId,
         rating: rating
-      }
+      },
+      _method: "PATCH"
     },
     dataType: "json"
   });

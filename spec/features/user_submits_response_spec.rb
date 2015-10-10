@@ -17,9 +17,9 @@ feature "user submits a query", %{
     scenario "successfully submits selected choice" do
       visit question_path(question)
       click_link question.choices.first.description
-      click_link "Create query"
+      click_link "Submit Response"
       find(".flash-success")
-      expect(page).to have_content("query successfully added")
+      expect(page).to have_content("Response successfully added")
     end
   end
 end

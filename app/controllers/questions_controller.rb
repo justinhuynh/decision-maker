@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
+      @question.create_query
       flash[:success] = "Question successfully added"
       redirect_to @question
     else
@@ -24,6 +25,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @choices = @question.choices
+    @recommendation = @question.recommendation
   end
 
   def edit
