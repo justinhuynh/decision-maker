@@ -1,6 +1,9 @@
 <div class="panel">
   <h2><%= @question.body %></h2>
-  <%= link_to "View Responses For This Question", question_responses_path(@question) %>
+</div>
+
+<div class="panel">
+  <h2>Your recommended choice is <%= @recommendation.description %></h2>
 </div>
 
 <h3>What did you decide?</h3>
@@ -17,6 +20,6 @@
 </div>
 
 <h3>What was the outcome?</h3>
-<%= render 'responses/slider' %>
+<%= render 'queries/slider' %>
 
-<%= link_to("Create Response", "#", class: "button expand submit-response", data: { question_id: @question.id }) %>
+<%= link_to("Submit Response", "#", class: "button expand submit-query", data: { question_id: @question.id, query_id: @question.query.id }) %>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user submits a response", %{
+feature "user submits a query", %{
   As an indecisive user
   I want to submit and rate the choice I ultimately selected (user choice)
   So that I can track the results of my choices
@@ -12,12 +12,12 @@ feature "user submits a response", %{
         that my selection was recorded
 } do
   context "User visits question and", js: true do
-    let!(:question) { FactoryGirl.create(:question_with_choices) }
+    let!(:question) { FactoryGirl.create(:question, :with_choices) }
 
     scenario "successfully submits selected choice" do
       visit question_path(question)
       click_link question.choices.first.description
-      click_link "Create Response"
+      click_link "Submit Response"
       find(".flash-success")
       expect(page).to have_content("Response successfully added")
     end

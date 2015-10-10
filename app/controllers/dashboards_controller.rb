@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def index
     @question = Question.find(params[:question_id])
-    @responses = @question.responses
+    @queries = @question.queries
   end
 end

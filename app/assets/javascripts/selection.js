@@ -12,18 +12,20 @@ $(".choice-panel").on("click", function(event) {
   selectedChoiceId = $(this).attr("id");
 });
 
-$(".submit-response").on("click", function(event) {
+$(".submit-query").on("click", function(event) {
   event.preventDefault();
   var questionId = $(this).data("questionId");
-  var rating = $("input#response_rating").val();
+  var queryId = $(this).data("queryId");
+  var rating = $("input#query_rating").val();
   var request = $.ajax({
     method: "POST",
-    url: ("/questions/" + questionId + "/responses"),
+    url: ("/questions/" + questionId + "/queries/" + queryId),
     data: {
-      response: {
-        choice_id: selectedChoiceId,
+      query: {
+        selected_choice_id: selectedChoiceId,
         rating: rating
-      }
+      },
+      _method: "PATCH"
     },
     dataType: "json"
   });
