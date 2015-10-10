@@ -1,7 +1,7 @@
 class Recommender
   attr_reader :question, :user, :choices, :queries
 
-  def initialize(question, user=nil)
+  def initialize(question, user = nil)
     @question = question
     @choices = question.choices
     @user = user

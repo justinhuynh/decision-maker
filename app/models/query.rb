@@ -13,7 +13,7 @@ class Query < ActiveRecord::Base
   private
 
   def set_recommendation
-    recommender = Recommender.new(self.question)
-    self.update_attributes(recommended_choice: recommender.recommendation)
+    recommender = Recommender.new(question)
+    update_attributes(recommended_choice: recommender.recommendation)
   end
 end

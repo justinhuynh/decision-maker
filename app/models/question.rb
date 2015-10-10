@@ -12,8 +12,6 @@ class Question < ActiveRecord::Base
     reject_if: proc { |attributes| attributes["description"].blank?
   }
 
-  # after_create :create_query
-
   def create_query
     queries.create!
   end

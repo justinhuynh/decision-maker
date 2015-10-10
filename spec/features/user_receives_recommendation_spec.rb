@@ -17,7 +17,9 @@ feature "user receives a recommendation from app", %{
     scenario "and is able to see a recommended choice" do
       visit question_path(question)
 
-      expect(page).to have_content("Your recommended choice is #{recommendation.description}")
+      expect(page).to have_content(
+        "Your recommended choice is #{recommendation.description}"
+      )
     end
   end
 end

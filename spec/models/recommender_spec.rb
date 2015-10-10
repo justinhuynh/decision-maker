@@ -2,7 +2,11 @@ require "rails_helper"
 
 describe Recommender do
   let!(:question) do
-    FactoryGirl.create(:question, :with_choices, body: "What should I have for dinner?")
+    FactoryGirl.create(
+      :question,
+      :with_choices,
+      body: "What should I have for dinner?"
+    )
   end
   let!(:recommendation) { Recommender.new(question) }
 
