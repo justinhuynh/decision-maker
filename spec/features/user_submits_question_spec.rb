@@ -14,11 +14,12 @@ feature "user submits a question", %{
         and answer choices
 } do
   context "User visits homepage and" do
-    scenario "successfully submits question on homepage" do
+    scenario "successfully submits question on homepage", js: true do
       visit root_path
       question = "What should I have for lunch?"
 
-      fill_in "Question", with: question
+      fill_in "question_body", with: question
+      click_link "Submit"
       fill_in_answers
       click_button "Create Question"
 
@@ -26,20 +27,23 @@ feature "user submits a question", %{
       expect(page).to have_content("Question successfully added")
     end
 
-    scenario "submits question that is too long" do
+    scenario "submits question that is too long", js: true do
       visit root_path
       super_long_question = "What should I have for lunch?" * 20
 
-      fill_in "Question", with: super_long_question
+      fill_in "question_body", with: super_long_question
+      click_link "Submit"
       fill_in_answers
       click_button "Create Question"
 
       expect(page).to have_content("Question must be less than 140 characters")
     end
 
-    scenario "submits blank question" do
+    scenario "submits blank question", js: true do
       visit root_path
-      fill_in "Question", with: ""
+      fill_in "question_body", with: ""
+      click_link "Submit"
+
       fill_in_answers
       click_button "Create Question"
 

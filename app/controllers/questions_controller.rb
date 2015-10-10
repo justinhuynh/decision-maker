@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   def new
     @question = Question.new
-    3.times do
+    2.times do
       @question.choices.build
     end
   end

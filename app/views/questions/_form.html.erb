@@ -1,9 +1,23 @@
 <%= form_for(@question) do |f| %>
-  <%= f.label :body, "Question" %>
-  <%= f.text_field :body %>
+<div class="row collapse">
+  <div class="small-10 large-11 columns">
+    <%= f.text_field :body, class: "postfix round", placeholder: "Enter your question here" %>
+  </div>
+  <div class="small-2 large-1 columns">
+    <a href="#" class="button postfix round enter-question">Submit</a>
+  </div>
+</div>
+<div class="answer-choices">
   <%= f.fields_for :choices do |choice| %>
-    <%= choice.label :description, "Answer Choice" %>
-    <%= choice.text_field :description %>
+  <div class="row collapse init-choice-row">
+    <div class="small-10 large-11 columns">
+      <%= choice.text_field :description, class: "postfix round", placeholder: "Enter an answer choice"  %>
+    </div>
+    <div class="small-2 large-1 columns">
+      <a href="#" class="button postfix round add-choice success">+</a>
+    </div>
+  </div>
   <% end %>
-  <%= f.submit class: "button expand" %>
+</div>
+  <%= f.submit "Create Question", class: "button round expand" %>
 <% end %>
