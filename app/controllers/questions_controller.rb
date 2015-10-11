@@ -9,9 +9,13 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
+    binding.pry
       @question.create_query
       flash[:success] = "Question successfully added"
-      redirect_to @question
+      # redirect_to @question
+      respond_to do |format|
+        format.js
+      end
     else
       flash[:warning] = @question.errors.full_messages.join(", ")
       render :new
