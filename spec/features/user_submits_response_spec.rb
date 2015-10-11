@@ -13,11 +13,18 @@ feature "user submits a response", %{
 } do
   context "User visits question and" do
     let!(:question) { FactoryGirl.create(:question, :with_choices) }
+    let!(:choices) { question.choices.map(&:description) }
 
     scenario "successfully submits selected choice", js: true do
-      visit question_path(question)
+      visit root_path
+      fill_in_question(question.body)
+      fill_in_answers(choices)
+      click_button "Create Question"
+      find("#recommendation")
+
       click_link question.choices.first.description
       click_link "Submit Response"
+
       find(".flash-success")
       expect(page).to have_content("Response successfully added")
     end

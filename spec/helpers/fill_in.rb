@@ -1,7 +1,9 @@
 module FillIn
-  def fill_in_question
-    question = "What should I have for lunch?"
-    fill_in "Question", with: question
+  def fill_in_question(question = nil)
+    question ||= "What should I have for lunch?"
+
+    fill_in "question_body", with: question
+    click_link "Submit"
   end
 
   def fill_in_answers(choices = nil)

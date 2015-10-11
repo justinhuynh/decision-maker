@@ -12,13 +12,20 @@ feature "user receives a recommendation from app", %{
 } do
   context "User submits question with choices", js: true do
     let!(:question) { FactoryGirl.create(:question, :with_choices) }
-    let!(:recommendation) { question.recommendation }
+    let!(:choices) { question.choices.map(&:description) }
 
     scenario "and is able to see a recommended choice" do
-      visit question_path(question)
+      visit root_path
+      fill_in_question(question.body)
+      fill_in_answers(choices)
+      click_button "Create Question"
+      find("#recommendation")
 
+      recommendation_text = find("#rec-desc").text
+
+      expect(choices.include?(recommendation_text)).to eq(true)
       expect(page).to have_content(
-        "Your recommended choice is #{recommendation.description}"
+        "Your recommended choice is #{recommendation_text}"
       )
     end
   end
