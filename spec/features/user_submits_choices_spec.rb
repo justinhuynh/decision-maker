@@ -26,14 +26,14 @@ feature "user submits answer choices for a question", %{
       ]
     end
 
-    scenario "successfully submits 3 different answer choices" do
+    scenario "successfully submits 3 different answer choices", js: true do
       visit root_path
       choices = ["Chinese food", "Italian food", "Vietnamese food"]
 
-      fill_in "Question", with: "What's for dinner?"
-      fill_in answer_fields[0], with: choices[0]
-      fill_in answer_fields[1], with: choices[1]
-      fill_in answer_fields[2], with: choices[2]
+      fill_in "question_body", with: "What's for dinner?"
+      click_link "Submit"
+
+      fill_in_answers(choices)
       click_button "Create Question"
 
       expect(page).to have_content(choices[0])
@@ -41,15 +41,15 @@ feature "user submits answer choices for a question", %{
       expect(page).to have_content(choices[2])
     end
 
-    scenario "submits answer choice that is too long" do
+    scenario "submits answer choice that is too long", js: true do
       visit root_path
-      choices = ["Chinese food", "Italian food", "Vietnamese food"]
-      super_long_choice = choices[0] * 30
+      super_long_choice = "Chinese food" * 30
+      choices = [super_long_choice, "Italian food", "Vietnamese food"]
 
-      fill_in "Question", with: "What's for dinner?"
-      fill_in answer_fields[0], with: super_long_choice
-      fill_in answer_fields[1], with: choices[1]
-      fill_in answer_fields[2], with: choices[2]
+      fill_in "question_body", with: "What's for dinner?"
+      click_link "Submit"
+      
+      fill_in_answers(choices)
       click_button "Create Question"
 
       expect(page).
