@@ -6,7 +6,9 @@ class QueriesController < ApplicationController
     @query = @question.query
     @query.user = current_user if current_user
     if @query.update(query_params)
-      flash[:success] = "Response successfully added. Selection: #{@query.selected_choice.description}. Rating: #{@query.rating}"
+      flash[:success] = "Response successfully added.
+      Selection: #{@query.selected_choice.description}.
+      Rating: #{@query.rating}"
     else
       flash[:errors] = @query.errors.full_messages.join(", ")
       render partial: "layouts/flash_js"
