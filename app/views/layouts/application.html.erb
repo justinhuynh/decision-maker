@@ -19,7 +19,9 @@
   </div>
   <div class="row center-container master-overlay">
     <div class="small-12 small-centered columns">
-      <%= yield %>
+      <div class="main-content-container">
+        <%= yield %>
+      </div>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= yield :extra_footer %>

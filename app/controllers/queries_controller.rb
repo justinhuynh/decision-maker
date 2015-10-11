@@ -1,18 +1,15 @@
 class QueriesController < ApplicationController
+  respond_to :js, :html
+
   def update
     @question = Question.find(params[:question_id])
     @query = @question.query
     @query.user = current_user if current_user
     if @query.update(query_params)
-      render json: {
-        message: "Response successfully added",
-        choice: @query.selected_choice.description,
-        rating: @query.rating
-      }
+      flash[:success] = "Response successfully added. Selection: #{@query.selected_choice.description}. Rating: #{@query.rating}"
     else
-      render json: {
-        message: @query.errors.full_messages.join(", ")
-      }
+      flash[:errors] = @query.errors.full_messages.join(", ")
+      render partial: "layouts/flash_js"
     end
   end
 

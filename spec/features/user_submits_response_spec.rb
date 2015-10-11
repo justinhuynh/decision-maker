@@ -11,10 +11,10 @@ feature "user submits a response", %{
   - [X] Upon successfully entering my selected choice, I will see
         that my selection was recorded
 } do
-  context "User visits question and", js: true do
+  context "User visits question and" do
     let!(:question) { FactoryGirl.create(:question, :with_choices) }
 
-    scenario "successfully submits selected choice" do
+    scenario "successfully submits selected choice", js: true do
       visit question_path(question)
       click_link question.choices.first.description
       click_link "Submit Response"

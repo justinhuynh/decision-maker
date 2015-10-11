@@ -1,0 +1,25 @@
+<div class="panel">
+  <h2><%= @question.body %></h2>
+</div>
+
+<div class="panel">
+  <h2>Your recommended choice is <%= @recommendation.description %></h2>
+</div>
+
+<h3>What did you decide?</h3>
+<div class="row">
+  <% @choices.each_with_index do |choice, index| %>
+    <div class="columns medium-4 small-12 end">
+      <a href="#">
+        <div class="card text-center choice-panel" id="<%=choice.id%>">
+          <%= choice.description %>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>
+
+<h3>What was the outcome?</h3>
+<%= render 'queries/slider' %>
+
+<%= link_to("Submit Response", "#", class: "button expand submit-query", data: { question_id: @question.id, query_id: @question.query.id }) %>

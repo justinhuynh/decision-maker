@@ -1,7 +1,7 @@
 var selectedChoiceId;
 var count = 0;
 
-$(".choice-panel").on("click", function(event) {
+$(".main-content-container").on("click", ".choice-panel", function(event) {
   event.preventDefault();
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
@@ -12,7 +12,7 @@ $(".choice-panel").on("click", function(event) {
   selectedChoiceId = $(this).attr("id");
 });
 
-$(".submit-query").on("click", function(event) {
+$(".main-content-container").on("click", ".submit-query", function(event) {
   event.preventDefault();
   var questionId = $(this).data("questionId");
   var queryId = $(this).data("queryId");
@@ -26,17 +26,6 @@ $(".submit-query").on("click", function(event) {
         rating: rating
       },
       _method: "PATCH"
-    },
-    dataType: "json"
-  });
-  request.success(function(data) {
-    count++;
-    var flashMessage = $("<div>", {
-      class: "small-12 small-centered columns flash flash-success",
-      text: data.message + " (" + count + ")\nSelection: " + data.choice + ", Rating: " + data.rating
-    });
-    var flashContainer = $(".flash-container");
-    flashContainer.empty();
-    flashMessage.appendTo(flashContainer);
+    }
   });
 });
