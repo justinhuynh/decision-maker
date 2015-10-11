@@ -14,11 +14,11 @@ feature "authenticated user views saved questions", %{
     let(:user) { FactoryGirl.create(:user) }
 
     scenario "and has link to dashboard" do
-    #   sign_in(user)
-    #   within("nav#top-bar") do
-    #     click_link "Dashboard"
-    #   end
-    #   expect(page).to have_content("#{user.first_name}'s Dashboard")
+  #   sign_in(user)
+  #   within("nav#top-bar") do
+  #     click_link "Dashboard"
+  #   end
+  #   expect(page).to have_content("#{user.first_name}'s Dashboard")
     end
   end
 end
