@@ -27,7 +27,7 @@ feature "authenticated user views saved questions", %{
     scenario "user can view a list of saved questions" do
       sign_in(user)
       visit dashboard_path
-      
+
       expect(page).to have_content(queries[0].question.body)
       expect(page).to have_content(queries[1].selected_choice.description)
       expect(page).to have_content(queries[2].recommended_choice.description)
