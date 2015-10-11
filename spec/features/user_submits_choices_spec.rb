@@ -48,7 +48,7 @@ feature "user submits answer choices for a question", %{
 
       fill_in "question_body", with: "What's for dinner?"
       click_link "Submit"
-      
+
       fill_in_answers(choices)
       click_button "Create Question"
 

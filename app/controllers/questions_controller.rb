@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  respond_to :js
+
   def new
     @question = Question.new
     2.times do
@@ -11,10 +13,11 @@ class QuestionsController < ApplicationController
     if @question.save
       @question.create_query
       flash[:success] = "Question successfully added"
-      redirect_to @question
+      @choices = @question.choices
+      @recommendation = @question.recommendation
     else
       flash[:warning] = @question.errors.full_messages.join(", ")
-      render :new
+      render partial: "layouts/errors"
     end
   end
 

@@ -1,0 +1,5 @@
+$(".flash-container").html("<%= j (render partial: "layouts/flash") %>")
+
+$(".main-content-container").empty();
+$(".main-content-container").html("<%= j (render partial: "show", locals: { question: @question, choices: @choices, recommendation: @recommendation }) %>");
+$(document).foundation("slider", "reflow");

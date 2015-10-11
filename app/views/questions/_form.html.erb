@@ -1,4 +1,4 @@
-<%= form_for(@question) do |f| %>
+<%= form_for(@question, remote: true) do |f| %>
 <div class="row collapse">
   <div class="small-10 large-11 columns">
     <%= f.text_field :body, class: "postfix round", placeholder: "Enter your question here" %>
