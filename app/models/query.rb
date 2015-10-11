@@ -10,6 +10,16 @@ class Query < ActiveRecord::Base
   validates :rating, numericality: { only_integer: true, allow_nil: true }
   validates :rating, inclusion: { in: 0..10, allow_nil: true }
 
+  delegate :choices, :body, to: :question, prefix: false
+
+  def selected
+    selected_choice.description
+  end
+
+  def recommended
+    recommended_choice.description
+  end
+
   private
 
   def set_recommendation
