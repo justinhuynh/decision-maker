@@ -12,9 +12,12 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'pry-rails'
 gem 'faker'
-gem 'dotenv-rails'
+gem 'fog'
+gem 'fog-aws'
+gem 'carrierwave'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
