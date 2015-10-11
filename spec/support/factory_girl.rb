@@ -16,9 +16,10 @@ FactoryGirl.define do
   end
 
   factory :query do
-    selected_choice
-    recommended_choice
-    question
+    question { create(:question, :with_choices) }
+    selected_choice { question.choices.sample }
+    recommended_choice { question.choices.sample }
+    user
     rating { rand(0..10) }
   end
 

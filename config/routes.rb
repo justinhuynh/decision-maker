@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :questions, except: :delete do
     resources :queries
   end
+
+  get "/dashboard", to: "dashboards#show", as: "dashboard"
 end
