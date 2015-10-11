@@ -1,6 +1,6 @@
 class Choice < ActiveRecord::Base
   belongs_to :question
-  
+
   validates :description, presence: { message: "Answer choice can't be blank" }
   validates :description, length: {
     maximum: 140,
