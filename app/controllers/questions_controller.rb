@@ -21,30 +21,10 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def index
-    @questions = Question.all
-  end
-
   def show
     @question = Question.find(params[:id])
     @choices = @question.choices
     @recommendation = @question.recommendation
-  end
-
-  def edit
-    @question = Question.find(params[:id])
-    @choices = @question.choices
-  end
-
-  def update
-    @question = Question.find(params[:id])
-    if @question.update_attributes(question_params)
-      flash[:notice] = "Question updated."
-      redirect_to @question
-    else
-      flash[:error] = @question.errors.full_messages
-      render :edit
-    end
   end
 
   protected
