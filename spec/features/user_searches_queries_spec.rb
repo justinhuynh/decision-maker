@@ -11,7 +11,6 @@ feature "user searches own past queries", %{
   - [ ] User is notified of invalid inputs
   - [ ] User results based on search input
 } do
-
   let!(:user) { FactoryGirl.create(:user) }
 
   let!(:queries_1) do

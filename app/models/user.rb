@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   def search(input)
-    results = queries.joins(:question).
-      where("questions.body ILIKE ?", "%#{input}%")
+    queries.joins(:question).
+            where("questions.body ILIKE ?", "%#{input}%")
   end
 end

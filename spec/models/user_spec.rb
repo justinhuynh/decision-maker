@@ -6,8 +6,8 @@ describe User do
     it { should validate_presence_of(:email) }
     it { should have_many(:queries) }
   end
-  describe "methods" do
 
+  describe "methods" do
     let!(:user) { FactoryGirl.create(:user) }
 
     let!(:queries_1) do
