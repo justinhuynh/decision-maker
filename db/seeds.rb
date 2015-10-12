@@ -1,6 +1,6 @@
-require 'faker'
+require "faker"
 
-interrogatives = [ "Who", "What", "When", "Where", "Why", "Which", "How" ]
+interrogatives = ["Who", "What", "When", "Where", "Why", "Which", "How"]
 nouns = []
 verbs = []
 choices = []
@@ -10,12 +10,12 @@ choices = []
 
 5.times do
   user_attributes = {
-  email: "#{Faker::Internet.email}",
-  first_name: "#{Faker::Name.first_name}",
-  last_name: "#{Faker::Name.last_name}",
-  password: "password",
-  password_confirmation: "password"
-}
+    email: "#{Faker::Internet.email}",
+    first_name: "#{Faker::Name.first_name}",
+    last_name: "#{Faker::Name.last_name}",
+    password: "password",
+    password_confirmation: "password"
+  }
   User.create!(user_attributes)
 end
 
