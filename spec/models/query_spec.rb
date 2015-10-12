@@ -29,5 +29,19 @@ describe Query do
         expect(previous_rec == new_rec).to eq(true)
       end
     end
+
+    it "should be able to return question text for query" do
+      expect(query.body).to eq(question.body)
+    end
+
+    it "should be able to return selected choice text for query" do
+      query.selected_choice = question.choices.sample
+      expect(query.selected).to eq(query.selected_choice.description)
+    end
+
+    it "should be able to return recommended choice text for query" do
+      expect(query.recommended).
+        to eq(query.recommended_choice.description)
+    end
   end
 end

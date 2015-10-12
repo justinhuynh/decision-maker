@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   get "/dashboard", to: "dashboards#show", as: "dashboard"
+  get "/search", to: "dashboards#search", as: "search"
 end
