@@ -36,8 +36,14 @@ body {
 input[type=text].postfix.round,
 input[type=email].postfix.round {
   border-radius: 1000px 0 0 1000px;
+  padding: 0;
 }
 
 .init-choice-row {
   display: none;
+}
+
+.search-box {
+  padding: 0;
+  line-height: 1;
 }
