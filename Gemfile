@@ -15,6 +15,7 @@ gem 'faker'
 gem 'fog'
 gem 'fog-aws'
 gem 'carrierwave'
+gem 'kaminari'
 
 group :development, :test do
   gem 'dotenv-rails'

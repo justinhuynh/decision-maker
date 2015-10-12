@@ -25,7 +25,7 @@ feature "user searches own past queries", %{
     sign_in(user)
     visit dashboard_path
     fill_in "search", with: "brown cow"
-    click_button "Search"
+    click_button "Go"
 
     expect(page).to have_content("Search Results")
     expect(page).to_not have_content(queries_1.first.body)
@@ -36,7 +36,7 @@ feature "user searches own past queries", %{
     sign_in(user)
     visit dashboard_path
     fill_in "search", with: ""
-    click_button "Search"
+    click_button "Go"
 
     expect(page).to have_content("Search field can't be empty")
     expect(page).to_not have_content("Search Results")
