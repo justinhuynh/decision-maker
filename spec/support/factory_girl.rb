@@ -21,6 +21,10 @@ FactoryGirl.define do
     recommended_choice { question.choices.sample }
     user
     rating { rand(0..10) }
+
+    factory :other_query do
+      question { create(:other_question, :with_choices) }
+    end
   end
 
   factory :question do
@@ -30,6 +34,10 @@ FactoryGirl.define do
       after(:create) do |question|
         create_list(:choice, 3, question: question)
       end
+    end
+
+    factory :other_question do
+      sequence(:body) { |n| "#{n} How now brown cow?" }
     end
   end
 end
