@@ -9,4 +9,15 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  config.before :each do
+    User.reindex
+    Query.reindex
+    Question.reindex
+    Choice.reindex
+    User.searchkick_index.refresh
+    Query.searchkick_index.refresh
+    Question.searchkick_index.refresh
+    Choice.searchkick_index.refresh
+  end
 end

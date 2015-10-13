@@ -6,8 +6,12 @@ class DashboardsController < ApplicationController
   end
 
   def search
-    @queries = @user.search(search_params).page(params[:page]).per(10)
-    if search_params.empty?
+    @queries = Query.search(
+      search_params[:query],
+      where: { user_id: current_user.id },
+      page: params[:page], per_page: 10
+    )
+    if search_params[:query].empty?
       flash[:warning] = "Search field can't be empty"
       render :show
     else
@@ -23,6 +27,6 @@ class DashboardsController < ApplicationController
   end
 
   def search_params
-    params.permit(:search)[:search]
+    params.permit(:query)
   end
 end
