@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  searchkick
+
   has_many :choices
   has_many :queries
 

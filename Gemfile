@@ -16,6 +16,7 @@ gem 'fog'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'searchkick'
 
 group :development, :test do
   gem 'dotenv-rails'

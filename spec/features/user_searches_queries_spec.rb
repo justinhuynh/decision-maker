@@ -24,7 +24,8 @@ feature "user searches own past queries", %{
   scenario "User successfully uses the search function" do
     sign_in(user)
     visit dashboard_path
-    fill_in "search", with: "brown cow"
+    Query.reindex
+    fill_in "query", with: "brown cow"
     click_button "Go"
 
     expect(page).to have_content("Search Results")
@@ -35,7 +36,7 @@ feature "user searches own past queries", %{
   scenario "User enters blank search input" do
     sign_in(user)
     visit dashboard_path
-    fill_in "search", with: ""
+    fill_in "query", with: ""
     click_button "Go"
 
     expect(page).to have_content("Search field can't be empty")
