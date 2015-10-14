@@ -1,5 +1,6 @@
 class Choice < ActiveRecord::Base
   searchkick
+
   belongs_to :question
 
   validates :description, presence: { message: "Answer choice can't be blank" }

@@ -14,7 +14,7 @@ class Query < ActiveRecord::Base
   delegate :choices, :body, to: :question, prefix: false
 
   def selected
-    selected_choice.description
+    selected_choice.description unless selected_choice.nil?
   end
 
   def recommended
