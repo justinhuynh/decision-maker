@@ -17,12 +17,11 @@
       <%= render 'layouts/flash' %>
     </div>
   </div>
-  <div class="row center-container">
-    <div class="small-12 small-centered columns">
+
       <div class="main-content-container">
         <%= yield %>
       </div>
-    </div>
+  
     <%= javascript_include_tag 'application' %>
     <%= yield :extra_footer %>
   </div>

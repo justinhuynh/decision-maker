@@ -12,7 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.foundation
+//= require dataTables/jquery.dataTables
 //= require foundation
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$(document).ready(function() {
+    $("#questions").DataTable({
+      "bJQueryUI": true,
+      "bSort": false,
+      "bPaginate": true,
+      "sPaginationType": "full_numbers",
+      "iDisplayLength": 10});
+});
