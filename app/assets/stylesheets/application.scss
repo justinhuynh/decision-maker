@@ -1,3 +1,6 @@
+@import "dataTables/jquery.dataTables";
+@import "dataTables/jquery.dataTables.foundation";
+@import "datatables_ext";
 @import "foundation_and_overrides";
 @import "card";
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
@@ -29,8 +32,12 @@ body {
   margin: 0;
 }
 
-.enter-question {
-  padding: 0;
+.submit-query {
+  margin: 0;
+}
+
+.main-content-container {
+  padding: 0 15px;
 }
 
 input[type=text].postfix.round,

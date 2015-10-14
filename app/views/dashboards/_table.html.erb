@@ -1,23 +1,22 @@
 <table id="questions">
-  <tr>
-    <th>Created At</th>
-    <th>Question</th>
-    <th>Recommended Choice</th>
-    <th>Selected Choice</th>
-    <th>Outcome Rating</th>
-  </tr>
-  <% @queries.each do |query| %>
-  <tr>
-    <td><%= query.created_at %></td>
-    <td><%= query.body %></td>
-    <td><%= query.recommended %></td>
-    <td><%= query.selected %></td>
-    <td><%= query.rating %></td>
-  </tr>
-  <% end %>
+  <thead>
+    <tr>
+      <th>Created At</th>
+      <th>Question</th>
+      <th>Recommended Choice</th>
+      <th>Selected Choice</th>
+      <th>Outcome Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queries.each do |query| %>
+      <tr>
+        <td><%= query.created_at %></td>
+        <td><%= query.body %></td>
+        <td><%= query.recommended %></td>
+        <td><%= query.selected %></td>
+        <td><%= query.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<p>
-  <%= paginate @queries %>
-  <%= page_entries_info @queries %>
-</p>

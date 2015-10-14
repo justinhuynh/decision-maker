@@ -18,6 +18,9 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'searchkick'
 gem 'elasticsearch-dsl'
+# gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', github: "rweng/jquery-datatables-rails", branch: "master"
+
 
 group :development, :test do
   gem 'dotenv-rails'
