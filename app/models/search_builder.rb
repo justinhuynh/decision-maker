@@ -8,27 +8,27 @@ module SearchBuilder
   end
 
   def search_choice(question, choice)
-      {
-        "query": {
-          "bool": {
-            "should": [
-              {
-                "common": {
-                  "body.analyzed": {
-                    "query": "#{question.body}"
-                  }
-                }
-              },
-              {
-                "common": {
-                  "selected_choice.analyzed": {
-                    "query": "#{choice.description}"
-                  }
+    {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "common": {
+                "body.analyzed": {
+                  "query": "#{question.body}"
                 }
               }
-            ]
-          }
+            },
+            {
+              "common": {
+                "selected_choice.analyzed": {
+                  "query": "#{choice.description}"
+                }
+              }
+            }
+          ]
         }
       }
+    }
   end
 end
