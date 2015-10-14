@@ -31,4 +31,10 @@ module SearchBuilder
       }
     }
   end
+
+  def advanced_search
+    client = ElasticCustomClient.new
+    query_string = %Q({"query":{"match":{"body.analyzed": "hack"}}}")
+    client.search index: "queries_development", body: query_string
+  end
 end
