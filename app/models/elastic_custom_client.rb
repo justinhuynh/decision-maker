@@ -1,6 +1,6 @@
-require 'multi_json'
-require 'faraday'
-require 'elasticsearch/api'
+require "multi_json"
+require "faraday"
+require "elasticsearch/api"
 
 class ElasticCustomClient
   include Elasticsearch::API
@@ -13,7 +13,7 @@ class ElasticCustomClient
     CONNECTION.run_request \
       method.downcase.to_sym,
       path,
-      ( body ? MultiJson.dump(body): nil ),
-      {'Content-Type' => 'application/json'}
+      (body ? MultiJson.dump(body) : nil),
+      { "Content-Type" => "application/json" }
   end
 end
