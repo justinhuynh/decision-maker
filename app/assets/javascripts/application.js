@@ -16,6 +16,7 @@
 //= require dataTables/jquery.dataTables.foundation
 //= require dataTables/jquery.dataTables
 //= require foundation
+//= require jqfloat
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -26,4 +27,12 @@ $(document).ready(function() {
       "bPaginate": true,
       "sPaginationType": "full_numbers",
       "iDisplayLength": 10});
+});
+
+$(document).ready(function() {
+  $('.form-floater').jqFloat({
+   width: 00,
+   height: 30,
+   speed: 1500
+ });
 });

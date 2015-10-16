@@ -7,23 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  <div class="row">
-    <div class="contain-to-grid small-12 small-centered columns">
-      <%= render 'layouts/top_bar' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 small-centered columns flash-container">
-      <%= render 'layouts/flash' %>
-    </div>
-  </div>
+   <div class="background">
+    <%= render 'layouts/top_bar' %>
 
-      <div class="main-content-container">
-        <%= yield %>
+    <div class="row">
+      <div class="small-12 small-centered columns flash-container">
+        <%= render 'layouts/flash' %>
       </div>
-  
+    </div>
+
+    <div class="main-content-container">
+      <%= yield %>
+    </div>
+
     <%= javascript_include_tag 'application' %>
-    <%= yield :extra_footer %>
   </div>
 </body>
 </html>
