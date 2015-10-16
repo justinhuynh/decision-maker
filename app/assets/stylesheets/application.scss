@@ -6,11 +6,7 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
 
 body {
-  background-attachment: fixed;
-  background-image: url(asset-path("background-photo-starsb.jpg"));
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: black;
 }
 
 .top-bar { background-color: transparent; }
@@ -24,8 +20,16 @@ body {
 }
 
 .master-overlay {
-  background-color: rgba(250, 250, 250, 0.2);
+  background-color: rgba(41, 88, 220, 0.41);
+  border-radius: 50%;
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   padding: 2vw;
+  position: relative;
+  width: 600px;
 }
 
 .submit-query {
@@ -33,6 +37,9 @@ body {
 }
 
 .enter-question {
+  background-color: #000DBA;
+  border-color: #007095;
+  color: #6FFDFF;
   padding: 0;
 }
 
@@ -40,17 +47,113 @@ body {
   padding: 0 15px;
 }
 
-input[type=text].postfix.round,
-input[type=email].postfix.round {
-  border-radius: 1000px 0 0 1000px;
-  padding: 0;
+.background {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background: url(asset-path("footer-eight.jpg")) no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  overflow: auto;
+}
+
+.frontpage-form {
+  input[type=text] {
+    background: transparent;
+    border: none;
+    border-radius: 1000px 0 0 1000px;
+    color: rgba(101, 247, 255, 0.75);
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+  }
+
+  input[type=submit], .button {
+    background-color: #000DBA;
+    border-color: #007095;
+    border-radius: 1000px;
+    color: #6FFDFF;
+    font-size: 1.8rem;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+  }
+
+  .postfix {
+    font-size: 1rem;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+.choice-row {
+  input[type=text] {
+    border: none;
+    border-radius: 0;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+  }
+
+  .add-choice {
+    background-color: #000DBA;
+    border-color: #007095;
+    border-radius: 1000px 0 0 1000px;
+    color: #6FFDFF;
+    font-size: 1rem;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+
+    .success {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #25D3F0;
+      }
+    }
+  }
+
+  .remove-choice {
+    border-radius: 0 1000px 1000px 0;
+    padding: 0;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+.form-floater {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 45vw;
 }
 
 .init-choice-row {
   display: none;
+  .button.postfix.round.add-choice.success {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #25D3F0;
+    }
+  }
 }
 
 .search-box {
   line-height: 1;
   padding: 0;
+}
+
+.form-bars {
+  padding: 0 15px;
 }
