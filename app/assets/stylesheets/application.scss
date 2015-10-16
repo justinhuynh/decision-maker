@@ -21,15 +21,15 @@ body {
 
 .master-overlay {
   background-color: rgba(41, 88, 220, 0.41);
-  padding: 2vw;
-  border-radius: 50% 50%;
+  border-radius: 50%;
+  display: flex;
   height: 600px;
-  width: 600px;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  justify-content: center;
+  padding: 2vw;
   position: relative;
+  width: 600px;
 }
 
 .submit-query {
@@ -37,10 +37,10 @@ body {
 }
 
 .enter-question {
-  padding: 0;
   background-color: #000DBA;
   border-color: #007095;
   color: #6FFDFF;
+  padding: 0;
 }
 
 .main-content-container {
@@ -48,72 +48,75 @@ body {
 }
 
 .background {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  background: url(asset-path("footer-eight.jpg")) no-repeat;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
+  background: url(asset-path("footer-eight.jpg")) no-repeat;
   background-size: contain;
-  overflow: auto;
   background-position: center bottom;
-  max-width: 720px;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
+  max-width: 720px;
+  overflow: auto;
 }
 
 .frontpage-form {
   input[type=text] {
-    border-radius: 1000px 0 0 1000px;
-    padding: 0;
-    border: none;
-    height: 60px;
-    line-height: 60px;
     background: transparent;
     border: none;
+    border-radius: 1000px 0 0 1000px;
     color: rgba(101, 247, 255, 0.75);
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
   }
 
   input[type=submit], .button {
-    border-radius: 1000px;
-    padding: 0;
-    height: 60px;
-    line-height: 60px;
     background-color: #000DBA;
     border-color: #007095;
+    border-radius: 1000px;
     color: #6FFDFF;
     font-size: 1.8rem;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
   }
 
   .postfix {
+    font-size: 1rem;
     height: 60px;
     line-height: 60px;
-    font-size: 1rem;
   }
 }
 
 .choice-row {
   input[type=text] {
-    border-radius: 0;
-    padding: 0;
     border: none;
+    border-radius: 0;
     height: 60px;
     line-height: 60px;
+    padding: 0;
   }
 
   .add-choice {
-    border-radius: 1000px 0 0 1000px;
-    padding: 0;
-    height: 60px;
-    line-height: 60px;
     background-color: #000DBA;
     border-color: #007095;
+    border-radius: 1000px 0 0 1000px;
     color: #6FFDFF;
     font-size: 1rem;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
 
     .success {
-      &:hover, &:active, &:focus { background-color: #25D3F0; }
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #25D3F0;
+      }
     }
   }
 
@@ -123,7 +126,6 @@ body {
     height: 60px;
     line-height: 60px;
   }
-
 }
 
 .form-floater {
@@ -139,7 +141,11 @@ body {
 .init-choice-row {
   display: none;
   .button.postfix.round.add-choice.success {
-    &:hover, &:active, &:focus { background-color: #25D3F0; }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #25D3F0;
+    }
   }
 }
 
