@@ -5,6 +5,8 @@
 @import "card";
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Raleway);
 
+$text-aqua: rgba(101, 247, 255, 0.75);
+
 body {
   background-color: black;
 }
@@ -22,14 +24,13 @@ body {
 .master-overlay {
   background-color: rgba(41, 88, 220, 0.41);
   border-radius: 50%;
-  display: flex;
-  height: 600px;
+  box-shadow: 0px 0px 40px 10px rgba(0, 197, 255, 0.64);
+  height: 400px;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 2vw;
   position: relative;
-  width: 600px;
+  width: 400px;
 }
 
 .submit-query {
@@ -37,10 +38,7 @@ body {
 }
 
 .enter-question {
-  background-color: #000DBA;
-  border-color: #007095;
-  color: #6FFDFF;
-  padding: 0;
+  visibility: hidden;
 }
 
 .main-content-container {
@@ -67,18 +65,22 @@ body {
   input[type=text] {
     background: transparent;
     border: none;
-    border-radius: 1000px 0 0 1000px;
-    color: rgba(101, 247, 255, 0.75);
+    border-color: none;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+    color: $text-aqua;
     height: 60px;
     line-height: 60px;
     padding: 0;
+    text-align: center;
   }
 
   input[type=submit], .button {
     background-color: #000DBA;
     border-color: #007095;
     border-radius: 1000px;
-    color: #6FFDFF;
+    color: $text-aqua;
     font-size: 1.8rem;
     height: 60px;
     line-height: 60px;
@@ -105,7 +107,7 @@ body {
     background-color: #000DBA;
     border-color: #007095;
     border-radius: 1000px 0 0 1000px;
-    color: #6FFDFF;
+    color: $text-aqua;
     font-size: 1rem;
     height: 60px;
     line-height: 60px;
@@ -128,12 +130,27 @@ body {
   }
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $text-aqua;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:    $text-aqua;
+ opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $text-aqua;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $text-aqua;
+}
+
 .form-floater {
+  left: 50%;
   margin: 0;
+  margin-right: -50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
   width: 45vw;
 }

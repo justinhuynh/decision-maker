@@ -15,10 +15,14 @@ module FillIn
       "question_choices_attributes_2_description"
     ]
 
-    find("#" + answer_fields[0])
-    find("#" + answer_fields[1])
+    find("#" + answer_fields[0], visible: false)
+    find("#" + answer_fields[1], visible: false)
+
+    # find(@id="#{answer_fields[0]}")
+    # find(@id="#{answer_fields[1]}")
 
     plus_buttons = page.all(".add-choice")
+    binding.pry
     fill_in answer_fields[0], with: choices[0]
     fill_in answer_fields[1], with: choices[1]
     plus_buttons[1].click

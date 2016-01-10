@@ -26,9 +26,11 @@ $(".answer-choices").on("click", ".remove-choice", function(event) {
   $(this).closest(".choice-row").slideUp();
 });
 
-$(".enter-question").on("click", function(event) {
-  event.preventDefault();
-  $(".init-choice-row").each(function() {
-    $(this).slideDown();
-  });
+$(".question-input").keypress(function(e) {
+  if(e.keyCode == 13) {
+    $(".init-choice-row").each(function() {
+      $(this).slideDown();
+    });
+   return false;
+  }
 });

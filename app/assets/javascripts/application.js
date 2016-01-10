@@ -20,19 +20,19 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-$(document).ready(function() {
-    $("#questions").DataTable({
-      "bJQueryUI": true,
-      "bSort": false,
-      "bPaginate": true,
-      "sPaginationType": "full_numbers",
-      "iDisplayLength": 10});
-});
 
 $(document).ready(function() {
-  $('.form-floater').jqFloat({
-   width: 00,
+  $("#questions").DataTable({
+    "bJQueryUI": true,
+    "bSort": false,
+    "bPaginate": true,
+    "sPaginationType": "full_numbers",
+    "iDisplayLength": 10
+  });
+
+  $(".form-floater").jqFloat({
+   width: 10,
    height: 30,
    speed: 1500
- });
+  });
 });

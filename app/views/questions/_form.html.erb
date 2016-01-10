@@ -1,12 +1,10 @@
 <div class="form-floater">
 <%= form_for(@question, remote: true) do |f| %>
-<div class="row collapse frontpage-form">
-  <div class="small-10 columns">
-    <%= f.text_field :body, class: "postfix round", placeholder: "Enter your question here" %>
+<div class="row frontpage-form">
+  <div class="small-10 small-centered columns">
+    <%= f.text_field :body, class: "question-input", placeholder: "Enter your question here" %>
   </div>
-  <div class="small-2 columns">
-    <a href="#" class="button postfix round enter-question">Submit</a>
-  </div>
+  <a href="#" class="enter-question"></a>
 </div>
 <div class="answer-choices">
   <%= f.fields_for :choices do |choice| %>

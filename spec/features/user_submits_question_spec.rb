@@ -19,7 +19,7 @@ feature "user submits a question", %{
       question = "What should I have for lunch?"
 
       fill_in "question_body", with: question
-      click_link "Submit"
+      find(".question-input").native.send_keys(:return)
       fill_in_answers
       click_button "Create Question"
 
@@ -32,7 +32,7 @@ feature "user submits a question", %{
       super_long_question = "What should I have for lunch?" * 20
 
       fill_in "question_body", with: super_long_question
-      click_link "Submit"
+      find(".question-input").native.send_keys(:return)
       fill_in_answers
       click_button "Create Question"
 
@@ -42,7 +42,7 @@ feature "user submits a question", %{
     scenario "submits blank question", js: true do
       visit root_path
       fill_in "question_body", with: ""
-      click_link "Submit"
+      find(".question-input").native.send_keys(:return)
 
       fill_in_answers
       click_button "Create Question"
